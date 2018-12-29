@@ -1,0 +1,9 @@
+---
+# defaults file for promtail
+
+http_listen_port: 0
+grpc_listen_port: 0
+
+positions_path: /tmp/positions.yml
+
+loki_server_ip: localhost

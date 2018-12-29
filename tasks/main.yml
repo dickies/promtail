@@ -1,0 +1,18 @@
+---
+# tasks file for promtail
+
+- name: Copy binary promtail
+  copy:
+   src: ./files/promtail
+   dest: /usr/bin/promtail
+   mode: 0744
+
+- name: Create folder promtail if no exist
+  file:
+    path: /etc/promtail
+    state: directory
+
+- name: copy promtail-configuration
+  template:
+    src: promtail-config.yaml.j2
+    dest: "/etc/promtail/promtail-config.yaml"
